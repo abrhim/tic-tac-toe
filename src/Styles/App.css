@@ -1,0 +1,17 @@
+.App {
+  display: grid;
+  height: 100vh;
+  margin: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  display: grid;
+
+  /* margin: auto; */
+  /* position: relative;
+  flex-direction: column;
+  justify-content: center; */
+}
+/* 
+#root{
+  height: 100%;
+} */

@@ -1,0 +1,38 @@
+{
+    "env": {
+        "node": true,
+        "browser": true,
+        "es6": true,
+        "jest/globals": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:jest/recommended",
+        "@magento"
+    ],
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "jest"
+    ],
+    "rules": {
+        "no-console": [
+            "warn"
+        ],
+        "no-unused-vars": [
+            "error",
+            {
+                "varsIgnorePattern": "_"
+            }
+        ],
+        "jsx-a11y/no-autofocus": [
+            "error",
+            {
+                "ignoreNonDOM": true
+            }
+        ]
+    }
+}
