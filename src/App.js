@@ -1,14 +1,14 @@
 import React from 'react';
 import './Styles/App.css';
 import Grid from './Components/Grid'
-import { GridProvider } from "./Contexts/Grid"
+import { GameProvider } from "./Contexts/Game"
 
 function App() {
   return (
     <div className="App">
-      <GridProvider>
+      <GameProvider>
         <Grid />
-      </GridProvider>
+      </GameProvider>
     </div>
    
   );

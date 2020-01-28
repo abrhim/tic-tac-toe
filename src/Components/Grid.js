@@ -1,10 +1,10 @@
 import React, {useContext} from 'react';
 import '../Styles/Grid.css';
-import { GridContext } from "../Contexts/Grid"
+import { GameContext } from "../Contexts/Game"
 import Box from './Box'
 
 function Grid() {
-    const { grid } = useContext(GridContext)
+    const { grid } = useContext(GameContext)
     return (
         <div className="grid" >
             {grid.map((row, x) => (

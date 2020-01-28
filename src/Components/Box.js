@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import { GridContext } from "../Contexts/Grid"
+import { GameContext } from "../Contexts/Game"
 
 function Box(props) {
-    const { grid, setBox } = useContext(GridContext)
+    const { grid, setBox } = useContext(GameContext)
     const {coordinates} = props
     const onClick = () => {
         setBox({ coordinates })
