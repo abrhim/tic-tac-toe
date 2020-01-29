@@ -26,6 +26,19 @@ const GameProvider = ({children}) => {
         // not sure why but when i used initState it wouldn't set it as anything
         setGrid([["-", "-", "-"], ["-", "-", "-"], ["-", "-", "-"]])
     }
+    useEffect(() => {
+        if (winner) {
+            const newScore = { ...score }
+            newScore[winner] += 1
+            setScore(newScore)
+        }
+    }, [winner])
+
+
+    useEffect(() => {
+        console.log("gridding", grid)
+        _evaluateGrid(grid)
+    }, [grid])
 
     const _evaluateGrid = gridToCheck => {
         // all rows === same
@@ -65,19 +78,7 @@ const GameProvider = ({children}) => {
             setWinner(antiDiag0)
         }
 
-        useEffect(() => {
-            if (winner) {
-                const newScore = { ...score }
-                newScore[winner] += 1
-                setScore(newScore)
-            }
-        }, [winner])
-
-
-        useEffect(() => {
-            console.log("gridding", grid)
-            _evaluateGrid(grid)
-        }, [grid])
+       
     }
 
     const context = {
