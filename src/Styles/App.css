@@ -5,13 +5,5 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   display: grid;
-
-  /* margin: auto; */
-  /* position: relative;
-  flex-direction: column;
-  justify-content: center; */
+  /* background-color: black; */
 }
-/* 
-#root{
-  height: 100%;
-} */
