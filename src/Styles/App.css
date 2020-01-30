@@ -68,10 +68,6 @@
 }
 
 .color-toggle {
-  grid-column: 2 / span 1;
+  grid-column: 2 / span 2;
   grid-row: 2 / span 1;
-  height: 5 px;
-  width: 30 px;
-  /* text-align: center; */
-  /* vertical-align: middle; */
 }
