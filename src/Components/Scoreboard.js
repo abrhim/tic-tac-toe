@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { GameContext } from "../Contexts/Game"
 
 const Scoreboard = (props) => {
-    const {score, resetGame, winner} = useContext(GameContext)
+    const {score} = useContext(GameContext)
     return (
         <div className="scoreboard">
             <h4>X: {score.X}</h4>

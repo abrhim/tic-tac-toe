@@ -10,7 +10,8 @@ const GameProvider = ({children}) => {
     const [grid, setGrid] = useState(initState)
     const [marker, setMarker] = useState("X")
     const [winner, setWinner] = useState()
-    const [score, setScore] = useState({X:0, O:0})
+    const [score, setScore] = useState({ X: 0, O: 0 })
+    const [catsGame, setCatsGame] = useState()
 
     const setBox = ({ coordinates:{x,y} }) => {
         const nextState = [...grid]
@@ -25,6 +26,7 @@ const GameProvider = ({children}) => {
         setWinner(undefined)
         // not sure why but when i used initState it wouldn't set it as anything
         setGrid([["-", "-", "-"], ["-", "-", "-"], ["-", "-", "-"]])
+        setCatsGame(undefined)
     }
     useEffect(() => {
         if (winner) {
@@ -47,6 +49,7 @@ const GameProvider = ({children}) => {
             const horizontal2 = row[2]
             if (horizontal0 !== "-" && horizontal0 === horizontal1 && horizontal1 === horizontal2) {
                 setWinner(horizontal0)
+                return
             }
         })
 
@@ -57,6 +60,7 @@ const GameProvider = ({children}) => {
             const column2 = gridToCheck[2][i] 
             if (column0 !== "-" && column0 === column1 && column1 === column2) {
                 setWinner(column0)
+                return
             }
         }
 
@@ -66,6 +70,7 @@ const GameProvider = ({children}) => {
         let diag2 = gridToCheck[2][2]
         if (diag0 !== "-" && diag0 === diag1 && diag1 === diag2 ) {
             setWinner(diag0)
+            return
         }
 
         // top right to bottom left
@@ -75,9 +80,21 @@ const GameProvider = ({children}) => {
 
         if (antiDiag0 !== "-" && antiDiag0 === antiDiag1 && antiDiag1 === antiDiag2) {
             setWinner(antiDiag0)
+            return
+        }
+        let count = 0
+        grid.forEach(row => {
+            row.forEach(cell => {
+                if (cell !== "-") {
+                    count += 1
+                }
+            })
+        })
+        if (count >= 9) {
+            setCatsGame(1)
         }
 
-       
+                
     }
 
     const context = {
@@ -85,7 +102,8 @@ const GameProvider = ({children}) => {
         winner,
         score,
         setBox,
-        resetGame
+        resetGame,
+        catsGame
     }
 
     return (
