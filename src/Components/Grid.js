@@ -1,5 +1,4 @@
 import React, {useContext} from 'react';
-import '../Styles/Grid.css';
 import { GameContext } from "../Contexts/Game"
 import Box from './Box'
 

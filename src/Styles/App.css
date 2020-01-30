@@ -1,3 +1,9 @@
+:root {
+  --background-color: black;
+  --color: white;
+}
+
+
 .App {
   display: grid;
   height: 100vh;
@@ -5,5 +11,67 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   display: grid;
-  /* background-color: black; */
+  background-color: var(--background-color);
+}
+
+.grid{
+    margin: auto;
+    grid-template-columns: 72px 72px 72px;
+    grid-template-rows: 72px 72px 72px;
+    display: grid;
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+    border-style: solid;
+    border-width: 1px;
+    color: var(--color);
+}
+
+
+
+.grid > div {
+    grid-column: span 1;
+    grid-row: span 1;
+    border-width: 1px;
+    border-style: solid;
+    vertical-align: middle;
+    text-align: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    display: grid;
+}
+
+.grid > div > span {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+}
+
+.announcementboard {
+    grid-column:  2 / span 1;
+    grid-row : 3 / span 1;
+    text-align: center;
+    color: var(--color);
+}
+
+.scoreboard {
+    grid-column:  2 / span 1;
+    grid-row : 1 / span 1;
+    text-align: center;
+    color: var(--color);
+}
+
+.color-toggle-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
+}
+
+.color-toggle {
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
+  height: 5 px;
+  width: 30 px;
+  /* text-align: center; */
+  /* vertical-align: middle; */
 }
