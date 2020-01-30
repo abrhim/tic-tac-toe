@@ -94,7 +94,6 @@ const GameProvider = ({children}) => {
             setCatsGame(1)
         }
 
-                
     }
 
     const context = {
