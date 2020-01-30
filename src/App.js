@@ -4,6 +4,7 @@ import Grid from './Components/Grid'
 import AnnouncementBoard from './Components/AnnouncementBoard'
 import { GameProvider } from "./Contexts/Game"
 import Scoreboard from './Components/Scoreboard';
+import ColorToggle from './Components/ColorToggle';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Scoreboard />
         <Grid />
         <AnnouncementBoard />
+        <ColorToggle />
       </GameProvider>
     </div>
    

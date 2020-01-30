@@ -36,7 +36,6 @@ const GameProvider = ({children}) => {
 
 
     useEffect(() => {
-        console.log("gridding", grid)
         _evaluateGrid(grid)
     }, [grid])
 
